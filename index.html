@@ -1,149 +1,201 @@
 
 
-<header>
-    <img src="logo.png" class="logo" alt="TROHIN Carrosserie">
+<!DOCTYPE html>
+<html lang="de">
 
-    <h1>TROHIN Carrosserie</h1>
+<head>
+    <meta charset="UTF-8">
 
-    <p>Familie. Vertrauen. Qualität fürs Leben.</p>
-</header>
-<style>
-header {
-    background: #000000;
-    padding: 60px 20px;
-    text-align: center;
-    border-bottom: 2px solid #d4a33a;
-}
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-.logo{
-    width:220px;
-    display:block;
-    margin:0 auto 20px;
-}
+    <title>TROHIN Carrosserie</title>
 
-header h1{
-    color:white;
-    font-size:48px;
-    margin:10px 0;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #000000;
+            color: #ffffff;
+        }
 
-header p{
-    color:#d4af37;
-    font-size:22px;
-}
+        header {
+            background: #000000;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 2px solid #d4a33a;
+        }
 
-section{
-    max-width:1100px;
-    margin:auto;
-    padding:50px 20px;
-}
+        .logo {
+            width: 320px;
+            max-width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
 
-h2{
-    color:#c40000;
-}
+        header h1 {
+            margin: 10px 0;
+            color: #ffffff;
+            font-size: 48px;
+        }
 
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
+        header p {
+            margin: 0;
+            color: #d4a33a;
+            font-size: 22px;
+        }
 
-.card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
 
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
-</style>
+        h2 {
+            color: #d4a33a;
+            margin-bottom: 20px;
+        }
 
+        .services {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 20px;
+        }
+
+        .card {
+            background: #111111;
+            border: 1px solid #d4a33a;
+            border-radius: 10px;
+            padding: 22px;
+            color: #ffffff;
+        }
+
+        .card h3 {
+            color: #d4a33a;
+            margin-top: 0;
+        }
+
+        footer {
+            background: #000000;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #d4a33a;
+        }
+
+        @media (max-width: 700px) {
+            header h1 {
+                font-size: 34px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            .logo {
+                width: 250px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-<h1>TROHIN Carrosserie</h1>
-<p>Familie. Vertrauen. Qualität fürs Leben.</p>
-</header>
+    <header>
+        <img
+            src="logo.png.jpeg"
+            class="logo"
+            alt="TROHIN Carrosserie Logo"
+        >
 
-<section>
-<h2>Über uns</h2>
+        <h1>TROHIN Carrosserie</h1>
 
-<p>
-Willkommen bei TROHIN Carrosserie.
-Wir sind Igor, Dana und Loredana.
+        <p>
+            Familie. Vertrauen. Qualität fürs Leben.
+        </p>
+    </header>
 
-Aus Liebe entstand unsere Familie.
-Aus unserer Familie entstand unser Traum.
+    <section>
+        <h2>Über uns</h2>
 
-Mit Leidenschaft, Präzision und Ehrlichkeit
-haben wir Trohin Carrosserie gegründet.
+        <p>
+            Willkommen bei TROHIN Carrosserie.
+            Wir sind Igor, Dana und Loredana.
+            Mit Leidenschaft, Präzision und Ehrlichkeit
+            bieten wir professionelle Arbeiten rund um Ihr Fahrzeug.
+        </p>
+    </section>
 
-Für uns ist jedes Fahrzeug mehr als ein Auftrag.
-Es ist Verantwortung, Vertrauen und Qualität.
+    <section>
+        <h2>Unsere Dienstleistungen</h2>
 
-Wir freuen uns auf Ihren Besuch.
-</p>
-</section>
+        <div class="services">
 
-<section>
+            <div class="card">
+                <h3>Carrosseriearbeiten</h3>
 
-<h2>Unsere Dienstleistungen</h2>
+                <p>
+                    Reparaturen nach Unfällen,
+                    Dellen und Karosserieschäden.
+                </p>
+            </div>
 
-<div class="services">
+            <div class="card">
+                <h3>Lackierarbeiten</h3>
 
-<div class="card">
-<h3>Unfallreparaturen</h3>
-<p>Carrosseriereparaturen</p>
-</div>
+                <p>
+                    Professionelle Fahrzeuglackierung
+                    und präzise Farbanpassung.
+                </p>
+            </div>
 
-<div class="card">
-<h3>Lackierarbeiten</h3>
-<p>Moderne Fahrzeuglackierung in höchster Qualität.</p>
-</div>
+            <div class="card">
+                <h3>Reifenservice</h3>
 
-<div class="card">
-<h3>Reifenservice</h3>
-<p>Reifenwechsel und Einlagerung.</p>
-</div>
+                <p>
+                    Reifenwechsel, Kontrolle
+                    und fachgerechte Montage.
+                </p>
+            </div>
 
-<div class="card">
-<h3>Fahrzeugdiagnose</h3>
-<p>Elektronische Diagnose mit modernsten Geräten.</p>
-</div>
+            <div class="card">
+                <h3>Fahrzeugdiagnose</h3>
 
-</div>
+                <p>
+                    Elektronische Diagnose
+                    mit modernen Geräten.
+                </p>
+            </div>
 
-</section>
+        </div>
+    </section>
 
-<section>
+    <section>
+        <h2>Kontakt</h2>
 
-<h2>Kontakt</h2>
+        <p>
+            TROHIN Carrosserie<br>
+            Balsthalerstrasse 4<br>
+            4717 Mümliswil-Ramiswil<br>
+            Schweiz
+        </p>
 
-<p>
-📍 <br>Balsthalerstrasse 4
-4717 Mümliswil-Ramiswil<br>
+        <p>
+            Telefon: +41 78 246 81 70<br>
+            E-Mail: trohincarrosserie@gmail.com
+        </p>
+    </section>
 
-📞 Telefon:<br>+41 78 246 81 70<br>
-
-✉️ E-Mail:<br>trohincarrosserie@gmail.com<br>
-
-Montag - Freitag
-</p>
-
-</section>
-
-<footer>
-
-© 2026 TROHIN Carrosserie
-
-</footer>
+    <footer>
+        © 2026 TROHIN Carrosserie
+    </footer>
 
 </body>
+
 </html>
