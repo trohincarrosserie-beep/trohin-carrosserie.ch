@@ -11,95 +11,553 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <meta
+        name="description"
+        content="TROHIN Carrosserie – professionelle Carrosserie-, Lackier- und Fahrzeugservicearbeiten in Mümliswil-Ramiswil."
+    >
+
     <title>TROHIN Carrosserie</title>
 
     <style>
+        :root {
+            --schwarz: #000000;
+            --dunkel: #0c0c0c;
+            --karte: #121212;
+            --gold: #d4a33a;
+            --gold-hell: #f0cc72;
+            --silber: #d9d9d9;
+            --weiss: #ffffff;
+            --grau: #b8b8b8;
+            --linie: #292929;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
+            background: var(--schwarz);
+            color: var(--weiss);
             font-family: Arial, Helvetica, sans-serif;
-            background: #000000;
-            color: #ffffff;
+            line-height: 1.6;
         }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* MENIU */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+
+            padding: 12px 6%;
+
+            background: rgba(0, 0, 0, 0.96);
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .nav-logo {
+            width: 125px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: var(--weiss);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* PARTEA SUPERIOARĂ */
 
         header {
-            background: #000000;
-            padding: 60px 20px;
+            min-height: 85vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 80px 20px;
+
             text-align: center;
-            border-bottom: 2px solid #d4a33a;
+            background: #000000;
+            border-bottom: 1px solid var(--gold);
         }
 
-        .logo {
-            width: 320px;
-            max-width: 90%;
-            height: auto;
+        .hero-content {
+            width: 100%;
+            max-width: 1050px;
+        }
+
+        .hero-logo {
             display: block;
-            margin: 0 auto 20px;
+
+            width: 560px;
+            max-width: 95%;
+
+            height: auto;
+
+            margin: 0 auto 30px;
         }
 
-        header h1 {
-            margin: 10px 0;
-            color: #ffffff;
-            font-size: 48px;
-        }
-
-        header p {
+        .hero-title {
             margin: 0;
-            color: #d4a33a;
-            font-size: 22px;
+
+            font-size: clamp(42px, 7vw, 82px);
+            line-height: 1.05;
+            letter-spacing: 3px;
         }
+
+        .hero-title .trohin {
+            color: var(--silber);
+        }
+
+        .hero-title .carrosserie {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            max-width: 800px;
+            margin: 25px auto 12px;
+
+            color: var(--weiss);
+            font-size: clamp(18px, 2.3vw, 25px);
+        }
+
+        .hero-slogan {
+            margin-top: 15px;
+
+            color: var(--gold);
+            font-size: clamp(16px, 2vw, 21px);
+            font-weight: bold;
+            letter-spacing: 1.2px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+
+            margin-top: 32px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 14px 22px;
+
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+
+            color: var(--weiss);
+            background: transparent;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: 0.2s ease;
+        }
+
+        .button-primary {
+            color: #000000;
+            background: var(--gold);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(212, 163, 58, 0.25);
+        }
+
+        /* SECȚIUNI GENERALE */
 
         section {
+            padding: 80px 7%;
+            background: var(--schwarz);
+        }
+
+        .section-title {
+            margin: 0;
+
+            color: var(--gold);
+            text-align: center;
+
+            font-size: clamp(31px, 4vw, 46px);
+        }
+
+        .gold-line {
+            width: 90px;
+            height: 3px;
+
+            margin: 14px auto 38px;
+
+            background: var(--gold);
+        }
+
+        /* ÜBER UNS */
+
+        .about-box {
+            max-width: 1000px;
+
+            margin: auto;
+            padding: 45px;
+
+            text-align: center;
+
+            background: var(--dunkel);
+            border: 1px solid var(--gold);
+            border-radius: 14px;
+
+            box-shadow: 0 0 25px rgba(212, 163, 58, 0.12);
+        }
+
+        .about-box p {
+            margin: 0 0 20px;
+
+            color: var(--weiss);
+            font-size: 19px;
+        }
+
+        .about-box .highlight {
+            color: var(--gold);
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+
+            margin-top: 38px;
+        }
+
+        .value {
+            padding: 18px 10px;
+
+            background: #080808;
+            border: 1px solid var(--linie);
+            border-radius: 8px;
+        }
+
+        .value-icon {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: var(--gold);
+            font-size: 35px;
+        }
+
+        .value strong {
+            color: var(--gold);
+        }
+
+        /* SERVICII */
+
+        .services-section {
+            border-top: 1px solid #171717;
+            border-bottom: 1px solid #171717;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-card {
+            min-height: 210px;
+
+            padding: 28px;
+
+            background: var(--karte);
+            border: 1px solid var(--linie);
+            border-radius: 10px;
+
+            transition: 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+        }
+
+        .service-icon {
+            display: block;
+
+            margin-bottom: 12px;
+
+            color: var(--gold);
+            font-size: 37px;
+        }
+
+        .service-card h3 {
+            margin: 0 0 12px;
+
+            color: var(--gold);
+            font-size: 21px;
+        }
+
+        .service-card p {
+            margin: 0;
+            color: var(--grau);
+        }
+
+        /* GALERIE */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+
+            margin: 0;
+
+            background: var(--dunkel);
+            border: 1px solid var(--linie);
+            border-radius: 9px;
+        }
+
+        .gallery-item img {
+            display: block;
+
+            width: 100%;
+            height: 285px;
+
+            object-fit: cover;
+
+            transition: 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery-item figcaption {
+            padding: 13px 16px;
+
+            color: var(--silber);
+            text-align: center;
+        }
+
+        /* DE CE NOI */
+
+        .why-section {
+            border-top: 1px solid #171717;
+            border-bottom: 1px solid #171717;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .why-card {
+            padding: 26px 18px;
+
+            text-align: center;
+
+            background: var(--karte);
+            border: 1px solid var(--linie);
+            border-radius: 9px;
+        }
+
+        .why-card span {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: var(--gold);
+            font-size: 40px;
+        }
+
+        .why-card h3 {
+            color: var(--gold);
+        }
+
+        .why-card p {
+            color: var(--grau);
+        }
+
+        /* CONTACT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+
             max-width: 1100px;
             margin: auto;
-            padding: 60px 20px;
         }
 
-        h2 {
-            color: #d4a33a;
-            margin-bottom: 20px;
-        }
+        .contact-card {
+            padding: 30px;
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(220px, 1fr)
-            );
-            gap: 20px;
-        }
-
-        .card {
-            background: #111111;
-            border: 1px solid #d4a33a;
+            background: var(--karte);
+            border: 1px solid var(--linie);
             border-radius: 10px;
-            padding: 22px;
-            color: #ffffff;
         }
 
-        .card h3 {
-            color: #d4a33a;
+        .contact-card h3 {
             margin-top: 0;
+            color: var(--gold);
         }
+
+        .contact-card p {
+            color: var(--silber);
+        }
+
+        .contact-card a {
+            color: var(--weiss);
+        }
+
+        .map {
+            width: 100%;
+            height: 330px;
+
+            border: 0;
+            border-radius: 8px;
+        }
+
+        /* FOOTER */
 
         footer {
-            background: #000000;
-            color: #aaaaaa;
+            padding: 32px 20px;
+
+            color: #999999;
             text-align: center;
-            padding: 25px;
-            border-top: 1px solid #d4a33a;
+
+            background: #000000;
+            border-top: 1px solid var(--gold);
+        }
+
+        /* BUTON WHATSAPP FIX */
+
+        .whatsapp-fixed {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 58px;
+            height: 58px;
+
+            color: #ffffff;
+            background: #25d366;
+
+            border-radius: 50%;
+
+            text-decoration: none;
+            font-size: 29px;
+            font-weight: bold;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.45);
+        }
+
+        /* TELEFON ȘI TABLETĂ */
+
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid,
+            .values {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 700px) {
-            header h1 {
-                font-size: 34px;
+            nav {
+                flex-direction: column;
             }
 
-            header p {
-                font-size: 18px;
+            .nav-links {
+                justify-content: center;
+                gap: 13px;
             }
 
-            .logo {
-                width: 250px;
+            header {
+                min-height: 72vh;
+                padding: 60px 18px;
+            }
+
+            .hero-logo {
+                width: 360px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .about-box {
+                padding: 28px 20px;
+            }
+
+            .about-box p {
+                font-size: 17px;
+            }
+
+            .services-grid,
+            .gallery-grid,
+            .why-grid,
+            .values,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 250px;
             }
         }
     </style>
@@ -107,116 +565,420 @@
 
 <body>
 
-    <header>
+    <!-- MENIU -->
+
+    <nav>
         <img
             src="logo.png.jpeg"
-            class="logo"
+            class="nav-logo"
             alt="TROHIN Carrosserie Logo"
         >
 
-        <h1>TROHIN Carrosserie</h1>
+        <div class="nav-links">
+            <a href="#start">STARTSEITE</a>
+            <a href="#ueber-uns">ÜBER UNS</a>
+            <a href="#leistungen">LEISTUNGEN</a>
+            <a href="#galerie">GALERIE</a>
+            <a href="#kontakt">KONTAKT</a>
+        </div>
+    </nav>
 
-        <p>
-            Familie. Vertrauen. Qualität fürs Leben.
-        </p>
+    <!-- PARTEA SUPERIOARĂ -->
+
+    <header id="start">
+        <div class="hero-content">
+
+            <img
+                src="logo.png.jpeg"
+                class="hero-logo"
+                alt="TROHIN Carrosserie"
+            >
+
+            <h1 class="hero-title">
+                <span class="trohin">TROHIN</span><br>
+                <span class="carrosserie">CARROSSERIE</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Ihr Spezialist für Carrosserie-, Lackier- und
+                Fahrzeugservicearbeiten in Mümliswil-Ramiswil.
+            </p>
+
+            <div class="hero-slogan">
+                FAMILIE. VERTRAUEN. QUALITÄT FÜRS LEBEN.
+            </div>
+
+            <div class="buttons">
+                <a
+                    class="button button-primary"
+                    href="tel:+41782468170"
+                >
+                    JETZT ANRUFEN
+                </a>
+
+                <a
+                    class="button"
+                    href="https://wa.me/41782468170"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    WHATSAPP
+                </a>
+
+                <a
+                    class="button"
+                    href="mailto:trohincarrosserie@gmail.com"
+                >
+                    OFFERTE ANFORDERN
+                </a>
+            </div>
+
+        </div>
     </header>
 
-    <section class="about">
+    <!-- DESPRE NOI -->
 
-<h2>Über uns</h2>
+    <section id="ueber-uns">
+        <h2 class="section-title">Über uns</h2>
+        <div class="gold-line"></div>
 
-<p>Wir sind Igor, Dana und Loredana (Lori).</p>
+        <div class="about-box">
 
-<p>
-Unsere Geschichte begann mit Liebe und wuchs durch Geduld,
-Vertrauen und harter Arbeit.
-</p>
+            <p>
+                Wir sind Igor, Dana und Loredana (Lori).
+            </p>
 
-<p>
-So wie wir Lori mit Liebe und Aufmerksamkeit für jedes Detail
-großgezogen haben, bauen wir auch unser Unternehmen auf.
-</p>
+            <p>
+                Unsere Geschichte begann mit Liebe und wuchs durch
+                Geduld, Vertrauen und harte Arbeit.
+            </p>
 
-<p>
-Mit Leidenschaft, Hingabe und Respekt kümmern wir uns um jedes
-Fahrzeug, als wäre es unser eigenes.
-</p>
+            <p>
+                So wie wir Lori mit Liebe und Aufmerksamkeit für jedes
+                Detail grossgezogen haben, bauen wir auch unser
+                Unternehmen auf.
+            </p>
 
-<p>
-Für uns ist jedes Auto mehr als nur ein Auftrag –
-es ist Verantwortung, Vertrauen und das gute Gefühl,
-dass unsere Kunden sicher unterwegs sind.
-</p>
+            <p>
+                Mit Leidenschaft, Hingabe und Respekt kümmern wir uns
+                um jedes Fahrzeug, als wäre es unser eigenes.
+            </p>
 
-<p><strong>Trohin Carrosserie – mehr als nur eine Reparatur.</strong></p>
+            <p>
+                Für uns ist jedes Fahrzeug mehr als nur ein Auftrag.
+                Es bedeutet Verantwortung, Vertrauen und die Sicherheit
+                unserer Kundinnen und Kunden.
+            </p>
 
-<p><strong>Ihre Sicherheit liegt uns am Herzen.</strong></p>
+            <p class="highlight">
+                TROHIN Carrosserie – mehr als nur eine Reparatur.
+            </p>
 
-</section>
+            <p class="highlight">
+                Ihre Sicherheit liegt uns am Herzen.
+            </p>
 
-    <section>
-        <h2>Unsere Dienstleistungen</h2>
+            <div class="values">
 
-        <div class="services">
+                <div class="value">
+                    <span class="value-icon">♡</span>
+                    <strong>LIEBE</strong>
+                </div>
 
-            <div class="card">
+                <div class="value">
+                    <span class="value-icon">♙</span>
+                    <strong>FAMILIE</strong>
+                </div>
+
+                <div class="value">
+                    <span class="value-icon">♢</span>
+                    <strong>VERTRAUEN</strong>
+                </div>
+
+                <div class="value">
+                    <span class="value-icon">↗</span>
+                    <strong>ZUKUNFT</strong>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICII -->
+
+    <section class="services-section" id="leistungen">
+        <h2 class="section-title">Unsere Leistungen</h2>
+        <div class="gold-line"></div>
+
+        <div class="services-grid">
+
+            <article class="service-card">
+                <span class="service-icon">🚘</span>
+
                 <h3>Carrosseriearbeiten</h3>
 
                 <p>
-                    Reparaturen nach Unfällen,
-                    Dellen und Karosserieschäden.
+                    Reparaturen nach Unfällen, Dellen und
+                    Karosserieschäden.
                 </p>
-            </div>
+            </article>
 
-            <div class="card">
+            <article class="service-card">
+                <span class="service-icon">🎨</span>
+
                 <h3>Lackierarbeiten</h3>
 
                 <p>
-                    Professionelle Fahrzeuglackierung
-                    und präzise Farbanpassung.
+                    Professionelle Fahrzeuglackierung und präzise
+                    Farbanpassung.
                 </p>
-            </div>
+            </article>
 
-            <div class="card">
-                <h3>Reifenservice</h3>
+            <article class="service-card">
+                <span class="service-icon">✨</span>
+
+                <h3>Fahrzeugpolitur</h3>
 
                 <p>
-                    Reifenwechsel, Kontrolle
-                    und fachgerechte Montage.
+                    Lackaufbereitung, Politur und Hochglanzpflege
+                    für Ihr Fahrzeug.
                 </p>
-            </div>
+            </article>
 
-            <div class="card">
+            <article class="service-card">
+                <span class="service-icon">🔍</span>
+
                 <h3>Fahrzeugdiagnose</h3>
 
                 <p>
-                    Elektronische Diagnose
-                    mit modernen Geräten.
+                    Elektronische Fehlerdiagnose mit moderner
+                    Diagnosetechnik.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">◉</span>
+
+                <h3>Reifenservice</h3>
+
+                <p>
+                    Reifenwechsel, Kontrolle und fachgerechte Montage.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">🔧</span>
+
+                <h3>Service und Wartung</h3>
+
+                <p>
+                    Ölwechsel, Filterwechsel und allgemeine
+                    Fahrzeugwartung.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+
+    <section id="galerie">
+        <h2 class="section-title">Galerie</h2>
+        <div class="gold-line"></div>
+
+        <div class="gallery-grid">
+
+            <figure class="gallery-item">
+                <img
+                    src="felgen.jpg"
+                    alt="Felgenreparatur"
+                >
+
+                <figcaption>
+                    Felgenreparatur und Vorbereitung
+                </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img
+                    src="mercedes-vorbereitung.jpg"
+                    alt="Mercedes während der Vorbereitung"
+                >
+
+                <figcaption>
+                    Carrosserie- und Lackiervorbereitung
+                </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img
+                    src="mercedes-fertig.jpg"
+                    alt="Mercedes nach der Reparatur"
+                >
+
+                <figcaption>
+                    Fertiges Fahrzeug
+                </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img
+                    src="opel-vorbereitung.jpg"
+                    alt="Opel während der Vorbereitung"
+                >
+
+                <figcaption>
+                    Vorbereitung und Spachtelarbeiten
+                </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img
+                    src="opel-fertig.jpg"
+                    alt="Opel nach der Arbeit"
+                >
+
+                <figcaption>
+                    Fahrzeug nach der Aufbereitung
+                </figcaption>
+            </figure>
+
+        </div>
+    </section>
+
+    <!-- DE CE NOI -->
+
+    <section class="why-section">
+        <h2 class="section-title">Warum TROHIN Carrosserie?</h2>
+        <div class="gold-line"></div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <span>♙</span>
+
+                <h3>Familienbetrieb</h3>
+
+                <p>
+                    Persönliche Betreuung und ehrliche Zusammenarbeit.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <span>★</span>
+
+                <h3>Qualität</h3>
+
+                <p>
+                    Sorgfältige Arbeit und hochwertige Ergebnisse.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <span>♢</span>
+
+                <h3>Vertrauen</h3>
+
+                <p>
+                    Transparente Beratung und faire Kommunikation.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <span>◎</span>
+
+                <h3>Präzision</h3>
+
+                <p>
+                    Aufmerksamkeit für jedes Detail Ihres Fahrzeugs.
                 </p>
             </div>
 
         </div>
     </section>
 
-    <section>
-        <h2>Kontakt</h2>
+    <!-- CONTACT -->
 
-        <p>
-            TROHIN Carrosserie<br>
-            Balsthalerstrasse 4<br>
-            4717 Mümliswil-Ramiswil<br>
-            Schweiz
-        </p>
+    <section id="kontakt">
+        <h2 class="section-title">Kontakt</h2>
+        <div class="gold-line"></div>
 
-        <p>
-            Telefon: +41 78 246 81 70<br>
-            E-Mail: trohincarrosserie@gmail.com
-        </p>
+        <div class="contact-grid">
+
+            <div class="contact-card">
+                <h3>TROHIN Carrosserie</h3>
+
+                <p>
+                    Balsthalerstrasse 4<br>
+                    4717 Mümliswil-Ramiswil<br>
+                    Schweiz
+                </p>
+
+                <p>
+                    Telefon:
+                    <a href="tel:+41782468170">
+                        +41 78 246 81 70
+                    </a>
+                </p>
+
+                <p>
+                    E-Mail:
+                    <a href="mailto:trohincarrosserie@gmail.com">
+                        trohincarrosserie@gmail.com
+                    </a>
+                </p>
+
+                <div class="buttons">
+                    <a
+                        class="button button-primary"
+                        href="tel:+41782468170"
+                    >
+                        ANRUFEN
+                    </a>
+
+                    <a
+                        class="button"
+                        href="https://wa.me/41782468170"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        WHATSAPP
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Standort</h3>
+
+                <iframe
+                    class="map"
+                    src="https://www.google.com/maps?q=Balsthalerstrasse%204%2C%204717%20M%C3%BCmliswil-Ramiswil&output=embed"
+                    loading="lazy"
+                    title="Standort TROHIN Carrosserie"
+                ></iframe>
+            </div>
+
+        </div>
     </section>
 
+    <!-- FOOTER -->
+
     <footer>
-        © 2026 TROHIN Carrosserie
+        © 2026 TROHIN Carrosserie ·
+        Familie. Vertrauen. Qualität fürs Leben.
     </footer>
+
+    <!-- WHATSAPP -->
+
+    <a
+        class="whatsapp-fixed"
+        href="https://wa.me/41782468170"
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp"
+    >
+        ☎
+    </a>
 
 </body>
 
